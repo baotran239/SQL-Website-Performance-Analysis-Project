@@ -112,7 +112,7 @@ Both monthly and weekly data show that **direct traffic** drives the highest rev
 ### **Query 04: Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017**
 ```sql
 WITH 
-purchaser_data AS(
+purchaser_data AS (
   SELECT
       FORMAT_DATE("%Y%m",PARSE_DATE("%Y%m%d",DATE)) AS month,
       (SUM(totals.pageviews)/COUNT(DISTINCT fullvisitorid)) AS avg_pageviews_purchase,
@@ -125,7 +125,7 @@ purchaser_data AS(
   GROUP BY month
 ),
 
-non_purchaser_data AS(
+non_purchaser_data AS (
   SELECT
       FORMAT_DATE("%Y%m",PARSE_DATE("%Y%m%d",DATE)) AS month,
       SUM(totals.pageviews)/COUNT(DISTINCT fullvisitorid) AS avg_pageviews_non_purchase,
@@ -190,7 +190,7 @@ In July 2017, the average total transactions per user reached 43.86, reflecting 
 
 ### **Query 07: Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017. Output should show product name and the quantity was ordered.**
 ```sql
-with buyer_list as(
+WITH buyer_list AS (
     SELECT
         distinct fullVisitorId
     FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`
@@ -226,7 +226,7 @@ The most frequently purchased additional product was Google Sunglasses (20 order
 
 ### **Query 08: Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase**
 ```sql
-WITH product_data AS(
+WITH product_data AS (
 SELECT
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',DATE)) AS month,
     COUNT(CASE WHEN eCommerceAction.action_type = '2' THEN product.v2ProductName END) AS num_product_view,
@@ -234,7 +234,7 @@ SELECT
     COUNT(CASE WHEN eCommerceAction.action_type = '6' AND product.productRevenue IS NOT NULL THEN product.v2ProductName END) AS num_purchase
 FROM `bigquery-public-data.google_analytics_sample.ga_sessions_*`
 ,UNNEST(hits) AS hits
-,UNNEST (hits.product) AS product
+,UNNEST(hits.product) AS product
 WHERE _table_suffix BETWEEN '20170101' AND '20170331'
 AND eCommerceAction.action_type in ('2','3','6')
 GROUP BY month
