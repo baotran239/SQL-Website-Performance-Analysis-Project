@@ -258,3 +258,4 @@ FROM product_data;
 - The highest engagement and purchase activity are observed in March 2017, showing an increasing trend in customer purchasing behavior over time.
 
 ## IV. Conclusions
+The analysis reveals stable traffic with a rise in transactions by March 2017. Direct traffic drives the highest revenue, while bounce rates vary across sources. Purchasers have fewer pageviews per session, indicating efficient navigation. Conversion rates from product views to purchases steadily improve, and cross-selling opportunities emerge from frequently co-purchased items. These insights help optimize marketing, user experience, and conversion strategies to drive growth.
