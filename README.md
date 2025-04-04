@@ -2,7 +2,10 @@
 This project leverages Google BigQuery to analyze customer purchase behavior on an e-commerce platform. By applying advanced SQL techniques such as CTEs, Aggregate Functions, and Table Functions, it processes key metrics like page views, transactions, and bounce rates, etc. to uncover trends and insights. The findings help businesses optimize strategies, enhance user experience, and drive conversions through data-driven decisions.
 
 ## II. Dataset
-This is a dataset available on Google BigQuery named "ga_session".
+This is a dataset available on Google BigQuery named "ga_session". To access the dataset, follow these steps:
+- Log in to your Google Cloud Platform account and create a new project.
+- Navigate to the BigQuery console and select your newly created project.
+- In the navigation panel, select "Add Data" and then "Search a project".
 
 ## III. Analysis
 ### **Query 01: Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)**
