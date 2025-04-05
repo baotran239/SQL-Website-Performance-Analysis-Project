@@ -1,3 +1,5 @@
+# [SQL] Website Performance Analysis Project
+
 ## I. Introduction
 This project leverages Google BigQuery to analyze customer purchase behavior on an e-commerce platform. By applying advanced SQL techniques such as CTEs, Aggregate Functions, and Table Functions, it processes key metrics like page views, transactions, and bounce rates, etc. to uncover trends and insights. The findings help businesses optimize strategies, enhance user experience, and drive conversions through data-driven decisions.
 
